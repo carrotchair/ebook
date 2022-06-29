@@ -5,6 +5,7 @@ import com.jurgita.ebook.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -15,8 +16,12 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public List<Book> getAll3() {
+    public List<Book> getAll() {
         return bookRepository.findAll();
+    }
+
+    public Optional<Book> getById(Long id) {
+        return bookRepository.findById(id);
     }
 
 }
