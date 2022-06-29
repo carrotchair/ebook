@@ -2,8 +2,8 @@ package com.jurgita.ebook.controllers;
 
 import com.jurgita.ebook.models.Book;
 import com.jurgita.ebook.service.BookService;
-import org.springframework.hateoas.CollectionModel;
-import org.springframework.hateoas.EntityModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,16 +14,12 @@ import java.util.List;
 @RequestMapping("/books")
 public class BookController {
 
+    @Autowired
     BookService bookService;
 
-    @GetMapping("")
-    public List<Book> getAllBooks() {
-        return bookService.all();
-    }
-
-    @GetMapping("/2")
-    public CollectionModel<EntityModel<Book>> all() {
-        return bookService.getAll();
+    @GetMapping("/3")
+    public ResponseEntity<List<Book>> getAll3() {
+        return ResponseEntity.ok(bookService.getAll3());
     }
 
 }

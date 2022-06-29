@@ -5,6 +5,7 @@ import com.jurgita.ebook.repository.BookRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.Year;
@@ -33,24 +34,12 @@ public class LoadDatabase {
             .pricePerUnit(9.98)
             .build();
 
-    CommandLineRunner initDatabase(BookRepository repository) {
-        return args -> log.info(message, repository.save(bookHobbit));
-    }
-
-    /*
+    @Bean
     CommandLineRunner initDatabase(BookRepository repository) {
         return args -> {
-            log.info(message, repository.save(new Book("Aaa",
-                    "T",
-                    11113333, 10, 23.99)));
-            log.info(message, repository.save(new Book("Bbb",
-                    "T",
-                    11114444, 4, 23.99)));
-            log.info(message, repository.save(new Book("Ccc",
-                    "T",
-                    11115555, 4, 1.2)));
+            log.info(message, repository.save(bookHobbit));
+            log.info(message, repository.save(bookLittlePrince));
         };
     }
-     */
 
 }
