@@ -1,6 +1,7 @@
 package com.jurgita.ebook.models;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,14 +11,15 @@ import java.time.Year;
 @Entity
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
+class Book {
 
     @Id
     @GeneratedValue
     private long id;
+    private Type type;
     private String name;
     private String author;
     private Year releaseYear;
