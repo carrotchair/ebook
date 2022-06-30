@@ -3,6 +3,7 @@ package com.jurgita.ebook.models;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.Year;
 
@@ -15,6 +16,7 @@ import java.time.Year;
 public class Book {
 
     @Id
+    @GeneratedValue
     private long id;
     private String name;
     private String author;

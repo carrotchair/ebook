@@ -17,7 +17,6 @@ public class LoadDatabase {
     String message = "Preloading {}";
 
     Book bookHobbit = Book.builder()
-            .id(1)
             .name("The Hobbit")
             .author("J. R. R. Tolkien")
             .releaseYear(Year.of(2001))
@@ -26,7 +25,6 @@ public class LoadDatabase {
             .build();
 
     Book bookLittlePrince = Book.builder()
-            .id(2)
             .name("The Little Prince")
             .author("Antoine de Saint-Exupéry")
             .releaseYear(Year.of(2008))
