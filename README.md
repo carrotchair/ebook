@@ -1,13 +1,6 @@
 <div id="top"></div>
 
 <!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -75,7 +68,15 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+It's an online shop for books. We have one class Book which is extended by all books. We have 4 types of books: regular, ebook, antique book and science journal.
+
+-- Every regular book and ebook has genre.
+
+Antique book is written before 1900.
+
+Science journal has science index.
+
+On first page (check BookController) we will see 5 books as advertisement.
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
