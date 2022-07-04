@@ -14,5 +14,5 @@ import javax.persistence.Entity;
 public class RegularBook extends Book {
 
     private Long barcode;
-    Genre genre;
+    private Genre genre;
 }

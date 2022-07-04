@@ -1,11 +1,25 @@
 package com.jurgita.ebook.controllers;
 
+import com.jurgita.ebook.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.print.Book;
+import java.util.List;
+
 @RestController
-@RequestMapping("/popular")
+@RequestMapping("")
 public class BookController {
 
-    // get most popular books and say: "Most popular books:"
+    @Autowired
+    BookService bookService;
+
+    @GetMapping
+    public ResponseEntity<List<Book>> getBooksForAdvertisement() {
+        return ResponseEntity.ok(bookService.getBooksForAdvertisement());
+    }
+
 }

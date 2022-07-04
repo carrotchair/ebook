@@ -1,6 +1,10 @@
 package com.jurgita.ebook.models;
 
-import lombok.*;
+import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
@@ -24,15 +28,17 @@ class Book {
     private String author;
     private Year releaseYear;
     private int numberOfPages;
+    private String language;
     private double pricePerUnit;
 
-    //zrob w kontrolerze sprawdzanie wszystkich setterow na notnull i
-    //tych dwoch pod katem mniej niz zero
+    private void pricePerUnitRange(double pricePerUnit) {
+        if(pricePerUnit < 0) {
+            throw new IllegalArgumentException("Price cannot be less than 0 (zero)");
+        }
+        this.pricePerUnit = pricePerUnit;
+    }
 
-//    public void setPricePerUnit(@NotNull double pricePerUnit) {
-//        if(pricePerUnit < 0) {
-//            throw new IllegalArgumentException("Price cannot be less than 0 (zero)");
-//        }
-//        this.pricePerUnit = pricePerUnit;
-//    }
+    public void setPricePerUnit(@NotNull double pricePerUnit) {
+        pricePerUnitRange(pricePerUnit);
+    }
 }

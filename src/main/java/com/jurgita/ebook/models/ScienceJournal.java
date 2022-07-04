@@ -1,6 +1,20 @@
 package com.jurgita.ebook.models;
 
-public class ScienceJournal {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
-    //science index
+import javax.persistence.Entity;
+
+@Entity
+@Getter
+@Setter
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ScienceJournal extends Book {
+
+    private Long scienceIndex;
 }

@@ -33,9 +33,6 @@ public class RegularBookController {
         return ResponseEntity.ok(regularBookService.getByGenre(genre));
     }
 
-
-    // get by genre (rodzaj)
-
     @PostMapping
     public void postBook() {
 

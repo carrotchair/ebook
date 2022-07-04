@@ -12,8 +12,7 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 public class EBook extends Book {
 
-    private String device;
-    // urzadzenie, na ktorym mozna przeczytac ebooka?
-    // co ebooka wyroznia ?
+    private Long ebookIndex;
+    private Genre genre;
 
 }

@@ -17,24 +17,21 @@ import java.time.Year;
 @NoArgsConstructor
 public class AntiqueBook extends RegularBook {
 
-    private static final Logger LOGGER = LogManager.getLogger(AntiqueBook.class);
-
     private final Year lastYear = Year.of(1900);
     private Year releaseYear;
+
+    private static final Logger LOGGER = LogManager.getLogger(AntiqueBook.class);
 
     private void releaseYearRange(Year releaseYear) {
         if (releaseYear.isBefore(lastYear)) {
             this.releaseYear = releaseYear;
         } else {
             this.releaseYear = Year.of(1899);
-            LOGGER.error("Antique book can be released no more recent than 1900 ");
+            LOGGER.error("Antique book can be released no more recent than 1900. ");
         }
     }
 
-    public Year getReleaseYear() {
-        return releaseYear;
-    }
-
+    @Override
     public void setReleaseYear(@NotNull Year releaseYear) {
         releaseYearRange(releaseYear);
     }
