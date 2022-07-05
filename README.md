@@ -22,7 +22,6 @@ Every regular book and ebook has genre.
 Antique book is written before 1900.
 Science journal has science index.
 On the first page (check BookController) we will see 5 books as advertisement.
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ### Built With
@@ -33,5 +32,3 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * Maven
 * Spring Web
 * JPA
-
-<p align="right">(<a href="#top">back to top</a>)</p>
