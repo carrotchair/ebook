@@ -6,23 +6,9 @@
   <h3 align="center">EBOOK</h3>
 
   <p align="center">
-    Project for maing my skills more sharp
+    Project for making my skills more sharp
   </p>
 </div>
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-  </ol>
-</details>
 
 
 <!-- ABOUT THE PROJECT -->
@@ -43,20 +29,9 @@ On the first page (check BookController) we will see 5 books as advertisement.
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [Spring Initializr](https://start.spring.io/)
-* [Maven]
-* [Spring Web]
-* [JPA]
+* Spring Initializr(https://start.spring.io/)
+* Maven
+* Spring Web
+* JPA
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
