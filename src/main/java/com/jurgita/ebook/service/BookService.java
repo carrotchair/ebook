@@ -1,11 +1,13 @@
 package com.jurgita.ebook.service;
 
+import com.jurgita.ebook.models.Book;
+import com.jurgita.ebook.models.Genre;
 import com.jurgita.ebook.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -38,5 +40,20 @@ public class BookService {
                 .forEach(randomNumbers::add);
 
         return randomNumbers;
+    }
+
+    public List<Book> getAll() {
+        return bookRepository.findAll();
+    }
+
+    public Optional<Book> getById(Long id) {
+        return bookRepository.findById(id);
+    }
+
+    public List<Book> getByGenre(Genre genre) {
+        return bookRepository.findAll()
+                .stream()
+                .filter(regularBook -> regularBook.getGenre() == genre)
+                .toList();
     }
 }

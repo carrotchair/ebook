@@ -18,18 +18,23 @@ import java.time.Year;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-class Book {
+public class Book {
 
     @Id
     @GeneratedValue
     private long id;
-    private Type type;
+    private TypeOfProduct typeOfProduct;
     private String name;
     private String author;
     private Year releaseYear;
     private int numberOfPages;
     private String language;
     private double pricePerUnit;
+
+    private Long barcode;
+    private Genre genre;
+    private Category category;
+    private Long scienceIndex;
 
     private void pricePerUnitRange(double pricePerUnit) {
         if(pricePerUnit < 0) {

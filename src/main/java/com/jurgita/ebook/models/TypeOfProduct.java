@@ -1,8 +1,9 @@
 package com.jurgita.ebook.models;
 
-public enum Type {
-    REGULAR,
+public enum TypeOfProduct {
+    REGULAR_BOOK,
     ANTIQUE,
     SCIENCE_JOURNAL,
-    EBOOK
+    EBOOK,
+    NEWSPAPER
 }
