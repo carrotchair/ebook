@@ -12,10 +12,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("")
-/*
-@RestController
-@RequestMapping("/books")
- */
 public class BookController {
 
     @Autowired
@@ -43,13 +39,15 @@ public class BookController {
     }
 
     @PostMapping
-    public void postBook() {
-
+    public void addBook(@RequestBody Book book) {
+        bookService.addNewBook(book);
     }
 
-    @PutMapping("/{id}")
-    public void editBook() {
-
+    @PutMapping("/{bookId}")
+    public ResponseEntity<Void> editBook(@RequestBody Book newBook,
+                                         @PathVariable Long bookId) {
+        bookService.updateBook(newBook, bookId);
+        return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("{id}")

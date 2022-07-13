@@ -3,6 +3,7 @@ package com.jurgita.ebook.service;
 import com.jurgita.ebook.models.Book;
 import com.jurgita.ebook.models.Genre;
 import com.jurgita.ebook.repository.BookRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.Random;
 public class BookService {
 
     private final BookRepository bookRepository;
+    private ModelMapper modelMapper;
 
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
@@ -55,5 +57,15 @@ public class BookService {
                 .stream()
                 .filter(regularBook -> regularBook.getGenre() == genre)
                 .toList();
+    }
+
+    public void addNewBook(Book book) {
+        
+        bookRepository.save(book);
+    }
+
+    public void updateBook(Book newBook, Long bookId) {
+        final var book = bookRepository.findById(bookId);
+
     }
 }

@@ -32,9 +32,9 @@ public class Book {
     private double pricePerUnit;
 
     private Long barcode;
-    private Genre genre;
-    private Category category;
-    private Long scienceIndex;
+    private Genre genre; //is for regular book and ebook
+    private Category category; //is for newspapers
+    private Long scienceIndex; //is for science journal
 
     private void pricePerUnitRange(double pricePerUnit) {
         if(pricePerUnit < 0) {
