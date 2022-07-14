@@ -22,7 +22,7 @@ public class Book {
 
     @Id
     @GeneratedValue
-    private long id;
+    private long bookId;
     private TypeOfProduct typeOfProduct;
     private String name;
     private String author;
@@ -32,12 +32,12 @@ public class Book {
     private double pricePerUnit;
 
     private Long barcode;
-    private Genre genre; //is for regular book and ebook
+    Genre genre; //is for regular book and ebook
     private Category category; //is for newspapers
     private Long scienceIndex; //is for science journal
 
     private void pricePerUnitRange(double pricePerUnit) {
-        if(pricePerUnit < 0) {
+        if (pricePerUnit < 0) {
             throw new IllegalArgumentException("Price cannot be less than 0 (zero)");
         }
         this.pricePerUnit = pricePerUnit;

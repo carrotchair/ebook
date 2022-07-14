@@ -1,6 +1,7 @@
 package com.jurgita.ebook.controllers;
 
 import com.jurgita.ebook.models.Book;
+import com.jurgita.ebook.models.BookDTO;
 import com.jurgita.ebook.models.Genre;
 import com.jurgita.ebook.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,16 +40,16 @@ public class BookController {
     }
 
     @PostMapping
-    public void addBook(@RequestBody Book book) {
+    public void addBook(@RequestBody BookDTO book) {
         bookService.addNewBook(book);
     }
 
-    @PutMapping("/{bookId}")
-    public ResponseEntity<Void> editBook(@RequestBody Book newBook,
-                                         @PathVariable Long bookId) {
-        bookService.updateBook(newBook, bookId);
-        return ResponseEntity.ok().build();
-    }
+//    @PutMapping("/{bookId}")
+//    public ResponseEntity<Void> editBook(@RequestBody BookDTO newBook,
+//                                         @PathVariable Long bookId) {
+//        bookService.updateBook(newBook, bookId);
+//        return ResponseEntity.ok().build();
+//    }
 
     @DeleteMapping("{id}")
     public void deleteBook() {
